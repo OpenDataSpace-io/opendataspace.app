@@ -1,0 +1,68 @@
+{
+    "schema": {
+        "type": "object",
+        "title": "Object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "minLength": 1,
+                "title": "Name"
+            },
+            "location": {
+                "type": "object",
+                "title": "Location",
+                "properties": {
+                    "city": {
+                        "type": "string",
+                        "default": "San Francisco"
+                    },
+                    "state": {
+                        "type": "string",
+                        "default": "CA"
+                    },
+                    "citystate": {
+                        "type": "string",
+                        "description": "This is generated automatically from the previous two fields",
+                        "template": "{{city}}, {{state}}",
+                        "watch": {
+                            "city": "location.city",
+                            "state": "location.state"
+                        }
+                    }
+                }
+            },
+            "longitude": {
+                "type": "number"
+            },
+            "latitude": {
+                "type": "number"
+            },
+            "startDate": {
+                "type": "string",
+                "format": "date",
+                "options": {
+                    "flatpickr": {}
+                }
+            },
+            "model": {
+                "type": "string"
+            },
+            "year": {
+                "type": "integer",
+                "enum": [
+                    1995, 1996, 1997, 1998, 1999,
+                    2000, 2001, 2002, 2003, 2004,
+                    2005, 2006, 2007, 2008, 2009,
+                    2010, 2011, 2012, 2013, 2014
+                ],
+                "default": 2008
+            },
+            "safety": {
+                "type": "integer",
+                "format": "rating",
+                "maximum": "5",
+                "exclusiveMaximum": false,
+                "readonly": false
+            }
+        }
+    }
