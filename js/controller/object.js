@@ -95,7 +95,6 @@ function loadObject(id) {
     return __awaiter(this, void 0, void 0, function* () {
         const response = yield fetch("https://opendataspace.sos-ch-dk-2.exo.io/api/rest/v1/object/" + id + ".json");
         const jsonData = yield response.json();
-        console.log(jsonData);
         return jsonData;
     });
 }

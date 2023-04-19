@@ -12,7 +12,6 @@ function setObjecttoForm(editor, id) {
     return __awaiter(this, void 0, void 0, function* () {
         const objectData = yield loadObject(id);
         editor.setValue(objectData);
-        globalThis.historyData = objectData;
         return objectData;
     });
 }
@@ -34,12 +33,6 @@ function setObject(editor, id) {
         return objectData;
     });
 }
-function getValueEditor(data) {
-    console.log("Get Value");
-    console.log(data);
-    return data;
-}
-var historyData = null;
 function main() {
     var url = new URL(document.URL);
     console.log(url.pathname);
@@ -74,15 +67,6 @@ function main() {
                 setObjectHistory(data, id);
             });
         }
-        if (params.get("id") === "new") {
-            console.log("id is new");
-        }
-        else {
-            console.log("id is not new");
-            console.log(params.get("id"));
-            setObjecttoForm(editor, params.get("id"));
-        }
-        //getValueEditor(editor);
     }
 }
 main();
