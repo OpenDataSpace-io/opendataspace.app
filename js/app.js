@@ -22,7 +22,7 @@ function setObjectHistory(data, id) {
     patchObjecttoS3(keyHistory, data);
 }
 function uploadObjecttoS3(data, id) {
-    const key = "api/rest/v1/object/" + id + ".json";
+    const key = "api/rest/v1/object/" + id + "/index.json";
     console.log(data);
     patchObjecttoS3(key, data);
 }
